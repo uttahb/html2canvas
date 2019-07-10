@@ -19,11 +19,10 @@ export type Options = CloneOptions &
 
 const parseColor = (value: string): Color => color.parse(Parser.create(value).parseComponentValue());
 
-const html2canvas = (element: HTMLElement, options: Partial<Options> = {}): Promise<HTMLCanvasElement> => {
+export const html2canvas = (element: HTMLElement, options: Partial<Options> = {}): Promise<HTMLCanvasElement> => {
     return renderElement(element, options);
 };
 
-export default html2canvas;
 
 CacheStorage.setContext(window);
 
